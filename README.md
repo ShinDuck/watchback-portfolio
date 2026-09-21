@@ -56,6 +56,8 @@ Watchback은 해결되지 않고 쌓인 Dependabot Alert를 관찰하다가 **�
 
 
 ## 주요 분석 결과
+- EPSS 변화 패턴 (발표 자료 일부)
+  <img width="2137" height="1169" alt="image" src="https://github.com/user-attachments/assets/aae361d3-82c4-4082-a7c8-22736acf0b9b" />
 
 원본 분석 문서에 기록된 2026-08-17 기준 결과입니다.
 
