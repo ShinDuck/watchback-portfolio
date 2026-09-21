@@ -2,13 +2,12 @@
 
 누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck의 데이터 분석·정책·계약, 파이프라인 참고본과 프로젝트 이해를 위한 팀 공통 문서를 정리한 개인 포트폴리오**입니다.
 
-## 프로젝트 개요
+## 프로젝트 개요 및 아키텍처
 
 Watchback은 해결되지 않고 쌓인 Dependabot Alert를 관찰하다가 **위험이나 패치 가능성이 달라진 항목을 다시 검토할 수 있도록 후보와 근거를 제공하는 서비스**입니다.
 
-![Watchback 팀 공통 아키텍처](docs/architecture/arch-overview.png)
+<img width="2144" height="1203" alt="image" src="https://github.com/user-attachments/assets/f68bdb37-60f0-49d8-a433-2b845c42c236" />
 
-위 그림은 팀 공통 설계 자료입니다. 전체 서비스의 설계 범위를 보여주며 개인 구현 범위나 기능 완료를 의미하지 않습니다.
 
 ## 프로젝트 이해를 위한 읽는 순서
 
