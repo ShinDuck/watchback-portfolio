@@ -11,7 +11,7 @@ Watchback 팀 프로젝트에서 ShinDuck에게 배정된 DS 이슈 6건을 개�
 | [#68 DS-02 EPSS 시계열·KEV 후보 신호 분석](https://github.com/dt4-proj3-team3/watchback/issues/68) | ShinDuck·Justmagic46 공동 | [#129](https://github.com/dt4-proj3-team3/watchback/pull/129) | [분석 보고서](../analysis/risk-signal-change-analysis.md), [분석 노트북](../../fabric/workspace/analysis/ds02_risk_change_analysis.ipynb) | Open, 체크리스트 5/5 완료 표시 |
 | [#73 DS-04 재검토 후보 정책·선정](https://github.com/dt4-proj3-team3/watchback/issues/73) | ShinDuck·Justmagic46 공동 | 하위 #74·#75로 연결 | [후보 선정 정책](../contracts/gold/candidate-selection-policy.md) | Open, 하위 이슈 1/2 완료 |
 | [#74 DS-04 포함·제외와 우선순위 정책](https://github.com/dt4-proj3-team3/watchback/issues/74) | ShinDuck | [#116](https://github.com/dt4-proj3-team3/watchback/pull/116) | [후보 선정 정책](../contracts/gold/candidate-selection-policy.md) | Closed / Completed |
-| [#75 DS-04 후보 생성 Pipeline 구현](https://github.com/dt4-proj3-team3/watchback/issues/75) | ShinDuck·Justmagic46 공동 | [#140](https://github.com/dt4-proj3-team3/watchback/pull/140), Justmagic46 작성 | 본인 정책·계약과의 협업 관계만 기록. 팀원 구현 코드 제외 | Open |
+| [#75 DS-04 후보 생성 Pipeline 구현](https://github.com/dt4-proj3-team3/watchback/issues/75) | ShinDuck·Justmagic46 공동 | [#140](https://github.com/dt4-proj3-team3/watchback/pull/140), Justmagic46 작성 | [공동 담당 Pipeline 참고본](../../fabric/workspace/analysis/ds04_gold_rereview_candidate_validation_v3.ipynb), 원본 작성 Justmagic46 | Open |
 
 상태와 체크리스트는 원본에서 확인한 기록이며, 이번 이관 중 재검증한 실행 결과를 뜻하지 않습니다. #129와 #131은 미병합 상태이며, 이관한 #131 계약 문서는 초안입니다. 이슈 등록 이력 자체를 본인 단독 작성 성과로 주장하지 않습니다.
 
@@ -63,12 +63,14 @@ EPSS 점수·percentile의 분포와 시계열 변화, 관찰 기간과 임계�
 
 정책을 Notebook/Job에 적용하고 후보·근거·배치 결과를 반복 생성하는 구현 작업입니다. 입력 기준 시점, 정책 버전·Batch ID, 동일 입력의 재실행 일관성, DS 출력 계약 충족이 완료 기준입니다.
 
-원본에 연결된 PR #140은 Justmagic46 작성이며 커밋 `bd23e02aed658b52ff8d717908712d3d1e001b12` 하나로 구성됩니다. 추가된 파일은 `fabric/workspace/analysis/ds04_gold_rereview_candidate_validation_v3.ipynb`입니다. 공동 담당이라는 이유로 해당 구현을 개인 작성물로 복사하지 않았습니다. PR 본문의 실행·무결성 검증 결과도 본인 성과로 옮기지 않았습니다.
+원본에 연결된 PR #140은 Justmagic46 작성이며 커밋 `bd23e02aed658b52ff8d717908712d3d1e001b12` 하나로 구성됩니다. 추가된 파일은 `fabric/workspace/analysis/ds04_gold_rereview_candidate_validation_v3.ipynb`입니다. 소유자의 요청으로 [후보 생성 Pipeline 노트북](../../fabric/workspace/analysis/ds04_gold_rereview_candidate_validation_v3.ipynb)을 공동 담당 작업 참고본으로 추가했습니다. 원본 작성자를 명시하고 실행 출력·횟수·메타데이터를 제거했으며, 팀 Lakehouse 이름을 예시 이름으로 치환했습니다. PR 본문의 실행·무결성 검증 결과는 본인 성과로 주장하지 않습니다.
+
+이관 시 코드 셀 7개의 Python 문법과 JSON 구조를 확인했습니다. 별도 rules.rule_queries_v1 모듈과 Silver 입력이 필요하며 전체 실행은 검증하지 않았습니다. WRITE_OUTPUT_TABLES=False 기본값을 유지합니다.
 
 본인 정책·입출력 계약과 팀원의 후보 생성 구현이 연결되는 협업 맥락을 보여주기 위해 이 항목을 남겼습니다. #75에는 후속 백필 이슈 #141과 PR #142도 언급돼 있으나 이번 개인 작성물 이관 대상에는 포함하지 않았습니다.
 
 ## 이관 및 검증 범위
 
-본인 PR 목록에서 확인된 3건(#116·#129·#131)에 연결된 개인 작업물 5개는 이미 이 저장소에 있습니다. 이번에는 중복 복사 없이 담당 이슈 6건의 요약과 작업물 연결을 추가했습니다. 원본 이슈를 팀 저장소에서 이동·삭제하거나 완료 처리하지 않았습니다. 팀원 코드, 원천 데이터, 자격증명, 내부 운영 자료는 추가하지 않았습니다.
+본인 PR 목록에서 확인된 3건(#116·#129·#131)에 연결된 개인 작업물 5개는 이미 이 저장소에 있습니다. 이번에는 중복 복사 없이 담당 이슈 6건의 요약과 작업물 연결을 추가했습니다. 원본 이슈를 팀 저장소에서 이동·삭제하거나 완료 처리하지 않았습니다. 추가 요청에 따라 Justmagic46 작성 후보 생성 노트북 1개를 출처를 명시한 공동 담당 참고 자료로 포함했습니다. 그 외 팀원 코드, 원천 데이터, 자격증명, 내부 운영 자료는 추가하지 않았습니다.
 
 [포트폴리오 README로 돌아가기](../../README.md)
