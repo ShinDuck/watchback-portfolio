@@ -1,6 +1,6 @@
 # Watchback — 개인 기여 포트폴리오
 
-누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck이 작성한 데이터 분석 노트북과 정책·계약 문서를 선별한 개인 포트폴리오**입니다. 전체 서비스나 팀원 구현을 개인 성과로 주장하지 않습니다.
+누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck이 작성한 데이터 분석·정책·계약과 공동 담당 작업의 파이프라인 참고본을 정리한 개인 포트폴리오**입니다. 전체 서비스나 팀원 구현을 개인 성과로 주장하지 않습니다.
 
 ## 담당 범위
 
@@ -22,9 +22,9 @@
 | #68 · DS-02 | EPSS·KEV 후보 신호 분석 | [보고서](docs/analysis/risk-signal-change-analysis.md) · [노트북](fabric/workspace/analysis/ds02_risk_change_analysis.ipynb) |
 | #73 · DS-04 | 정책·선정 상위 작업, 공동 담당 | 하위 #74 정책과 #75 구현의 연결 |
 | #74 · DS-04 | 포함·제외·우선순위 정책 | [후보 선정 정책](docs/contracts/gold/candidate-selection-policy.md) |
-| #75 · DS-04 | 후보 생성 Pipeline, 공동 담당 | 팀원 작성 PR #140은 협업 관계만 기록하고 코드 제외 |
+| #75 · DS-04 | 후보 생성 Pipeline, 공동 담당 | [Pipeline 노트북](fabric/workspace/analysis/ds04_gold_rereview_candidate_validation_v3.ipynb), 원본 작성 Justmagic46 |
 
-#74는 완료, 나머지 이슈는 Open입니다(2026-09-21 확인). 공동 담당 이슈에서도 이 저장소에는 본인 작성 작업물만 포함합니다.
+#74는 완료, 나머지 이슈는 Open입니다(2026-09-21 확인). 본인 작성 작업물과 Justmagic46 작성 Pipeline 참고본을 구분해 표시합니다.
 
 ## 먼저 볼 자료
 
@@ -35,6 +35,12 @@
 | [후보 선정 정책](docs/contracts/gold/candidate-selection-policy.md) | 제외 조건, 점수, P0~P3, 근거 보존 | PR #116 병합 및 본인 후속 수정 |
 | [Silver 입력 계약](docs/contracts/silver/silver-ds-analysis-input-contract.md) | 필드·키·시점·품질 기준 | PR #131 초안·미병합 |
 | [Gold 출력 계약](docs/contracts/gold/gold-rereview-candidate-output-contract.md) | 배치·후보·근거 스키마 | PR #131 초안·미병합 |
+
+## 공동 담당 파이프라인 참고본
+
+[후보 생성 Pipeline 노트북](fabric/workspace/analysis/ds04_gold_rereview_candidate_validation_v3.ipynb)은 공동 담당 이슈 #75에 연결된 [PR #140](https://github.com/dt4-proj3-team3/watchback/pull/140)의 작업물입니다. 원본 구현 작성자는 **Justmagic46**이며, ShinDuck의 단독 작성 코드로 표기하지 않습니다. 원본 커밋은 `bd23e02aed658b52ff8d717908712d3d1e001b12`입니다.
+
+룰 평가 → 후보·근거 생성 → 30일 중복 처리 → Gold 적재·무결성 검증 흐름을 담습니다. 별도의 `rules.rule_queries_v1` 모듈과 Silver 데이터가 필요하며 이 참고본만으로 실행되지 않습니다. 실행 출력·횟수·메타데이터를 제거하고 팀 Lakehouse 이름을 예시로 치환했습니다. 코드 셀 7개의 Python 문법과 JSON 구조를 확인했으며 전체 실행은 하지 않았습니다. `WRITE_OUTPUT_TABLES=False`를 유지합니다.
 
 ## 주요 분석 결과
 
@@ -65,7 +71,7 @@
 - 분석 문서·노트북: 본인 커밋 `7158cbf1bc93bb016a3a505f7f005f9306141481`, [PR #129](https://github.com/dt4-proj3-team3/watchback/pull/129)
 - 입력·출력 계약: 본인 커밋 `28b7e9cc190de1bceb4f0b247057ebe9512c1684`, [PR #131](https://github.com/dt4-proj3-team3/watchback/pull/131)
 
-팀원 애플리케이션·수집 파이프라인·인프라·운영 문서·원천 데이터·Git 이력은 제외했습니다. README는 포트폴리오용으로 새로 정리했으며 기존 작성물과 구분합니다.
+공동 담당 후보 생성 노트북 1개는 원본 작성자를 명시해 포함했습니다. 그 외 팀원 애플리케이션·수집 파이프라인·인프라·운영 문서·원천 데이터·Git 이력은 제외했습니다. README는 포트폴리오용으로 새로 정리했으며 기존 작성물과 구분합니다.
 
 ## 남은 한계
 
