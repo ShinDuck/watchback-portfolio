@@ -1,6 +1,6 @@
-# Watchback — 개인 포트폴리오
+# Watchback — 개인 기여 포트폴리오
 
-누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck이 작성한 데이터 분석 노트북과 정책·계약 문서를 선별한 개인 포트폴리오**입니다.
+누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck이 작성한 데이터 분석 노트북과 정책·계약 문서를 선별한 개인 포트폴리오**입니다. 전체 서비스나 팀원 구현을 개인 성과로 주장하지 않습니다.
 
 ## 담당 범위
 
@@ -11,19 +11,34 @@
 
 기술: Python, PySpark, Spark SQL, Microsoft Fabric/Synapse PySpark Notebook, Markdown 데이터 계약. 분석 신호는 FIRST EPSS, CISA KEV, GitHub Advisory(GHSA)입니다.
 
+## DS 담당 이슈와 작업물
+
+[DS 이슈별 기여 상세](docs/contributions/ds-issues-and-deliverables.md)에서 담당 이슈 6건의 목적·완료 기준·상태와 개인 작업물을 함께 볼 수 있습니다.
+
+| 이슈 | 담당 작업 | 개인 작업물 |
+| --- | --- | --- |
+| #65 · DS-01 | Silver 입력·품질 기준 | [입력 계약](docs/contracts/silver/silver-ds-analysis-input-contract.md) |
+| #66 · DS-01 | 후보 결과·근거 필드 | [출력 계약](docs/contracts/gold/gold-rereview-candidate-output-contract.md) |
+| #68 · DS-02 | EPSS·KEV 후보 신호 분석 | [보고서](docs/analysis/risk-signal-change-analysis.md) · [노트북](fabric/workspace/analysis/ds02_risk_change_analysis.ipynb) |
+| #73 · DS-04 | 정책·선정 상위 작업, 공동 담당 | 하위 #74 정책과 #75 구현의 연결 |
+| #74 · DS-04 | 포함·제외·우선순위 정책 | [후보 선정 정책](docs/contracts/gold/candidate-selection-policy.md) |
+| #75 · DS-04 | 후보 생성 Pipeline, 공동 담당 | 팀원 작성 PR #140은 협업 관계만 기록하고 코드 제외 |
+
+#74는 완료, 나머지 이슈는 Open입니다(2026-09-21 확인). 공동 담당 이슈에서도 이 저장소에는 본인 작성 작업물만 포함합니다.
+
 ## 먼저 볼 자료
 
-| 자료 | 내용 |
-| --- | --- |
-| [분석 보고서](docs/analysis/risk-signal-change-analysis.md) | D-30 기준 채택 근거, 임계값 비교, KEV 동반성 |
-| [분석 노트북](fabric/workspace/analysis/ds02_risk_change_analysis.ipynb) | EPSS·KEV·GHSA 분석을 구성하는 코드 |
-| [후보 선정 정책](docs/contracts/gold/candidate-selection-policy.md) | 제외 조건, 점수, P0~P3, 근거 보존 |
-| [Silver 입력 계약](docs/contracts/silver/silver-ds-analysis-input-contract.md) | 필드·키·시점·품질 기준 |
-| [Gold 출력 계약](docs/contracts/gold/gold-rereview-candidate-output-contract.md) | 배치·후보·근거 스키마 |
+| 자료 | 내용 | 원본 상태 |
+| --- | --- | --- |
+| [분석 보고서](docs/analysis/risk-signal-change-analysis.md) | D-30 기준 채택 근거, 임계값 비교, KEV 동반성 | PR #129 미병합 |
+| [분석 노트북](fabric/workspace/analysis/ds02_risk_change_analysis.ipynb) | EPSS·KEV·GHSA 분석을 구성하는 코드 | PR #129 미병합 |
+| [후보 선정 정책](docs/contracts/gold/candidate-selection-policy.md) | 제외 조건, 점수, P0~P3, 근거 보존 | PR #116 병합 및 본인 후속 수정 |
+| [Silver 입력 계약](docs/contracts/silver/silver-ds-analysis-input-contract.md) | 필드·키·시점·품질 기준 | PR #131 초안·미병합 |
+| [Gold 출력 계약](docs/contracts/gold/gold-rereview-candidate-output-contract.md) | 배치·후보·근거 스키마 | PR #131 초안·미병합 |
 
 ## 주요 분석 결과
 
-원본 분석 문서에 기록된 2026-08-17 기준 결과입니다.
+원본 분석 문서에 기록된 2026-08-17 기준 결과입니다. 이번 이관 과정에서 원천 데이터로 재산출하지 않았습니다.
 
 - EPSS 최신 snapshot 360,396개 CVE, 518개 일별 snapshot 분석 범위
 - 전체 EPSS 기준 D-30 Top 5% 진입 50건, 그중 7일 유지 48건
@@ -45,4 +60,15 @@
 ## 출처와 이관 범위
 
 원본 팀 저장소: [dt4-proj3-team3/watchback](https://github.com/dt4-proj3-team3/watchback) (private, 접근 권한 필요).
+
+- 후보 정책: 본인 커밋 `6cdfd7c75a3f488a3a49f3749e8bf1dd6df6b5a7`, [PR #116](https://github.com/dt4-proj3-team3/watchback/pull/116)
+- 분석 문서·노트북: 본인 커밋 `7158cbf1bc93bb016a3a505f7f005f9306141481`, [PR #129](https://github.com/dt4-proj3-team3/watchback/pull/129)
+- 입력·출력 계약: 본인 커밋 `28b7e9cc190de1bceb4f0b247057ebe9512c1684`, [PR #131](https://github.com/dt4-proj3-team3/watchback/pull/131)
+
 팀원 애플리케이션·수집 파이프라인·인프라·운영 문서·원천 데이터·Git 이력은 제외했습니다. README는 포트폴리오용으로 새로 정리했으며 기존 작성물과 구분합니다.
+
+## 남은 한계
+
+실제 사용자 판단 시점 대신 D-30 합성 baseline을 사용한 분석입니다. 계약 문서는 초안이며 실제 출력과 정합성 검증이 남아 있습니다. 예를 들어 Gold 문서의 EPSS Trigger 코드 표기와 패치 비교 시점 예시는 정책·구현과 추가 대조가 필요합니다. 이 저장소에 이관한 자료만으로 전체 탐지 Job과 웹 서비스가 구현·검증됐다고 주장하지 않습니다.
+
+현재 private이며 공개 전환은 소유자의 확인 후 진행합니다.
