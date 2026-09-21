@@ -1,6 +1,27 @@
 # Watchback — 개인 기여 포트폴리오
 
-누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck이 작성한 데이터 분석·정책·계약과 공동 담당 작업의 파이프라인 참고본을 정리한 개인 포트폴리오**입니다. 전체 서비스나 팀원 구현을 개인 성과로 주장하지 않습니다.
+누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck의 데이터 분석·정책·계약, 공동 담당 파이프라인 참고본과 프로젝트 이해를 위한 팀 공통 문서를 정리한 개인 포트폴리오**입니다. 전체 서비스나 팀원 구현을 개인 성과로 주장하지 않습니다.
+
+## 어떤 프로젝트인가요?
+
+Watchback은 해결되지 않고 쌓인 Dependabot Alert를 관찰하다가 **위험이나 패치 가능성이 달라진 항목을 다시 검토할 수 있도록 후보와 근거를 제공하는 서비스**입니다. DE가 GHSA·EPSS·KEV 외부 데이터를 수집·정제하고, DS가 위험 변화 후보를 생성하면, Web이 조직의 실제 Alert와 연결해 검토·조치 화면을 제공합니다.
+
+![Watchback 팀 공통 아키텍처](docs/architecture/arch-overview.png)
+
+위 그림은 팀 공통 설계 자료입니다. 전체 서비스의 설계 범위를 보여주며 개인 구현 범위나 기능 완료를 의미하지 않습니다.
+
+## 프로젝트 이해를 위한 읽는 순서
+
+| 순서 | 팀 공통 문서 | 알 수 있는 내용 |
+| --- | --- | --- |
+| 1 | [PRD](docs/product/prd.md) | 문제·사용자·MVP·성공 지표와 제약 |
+| 2 | [기술 아키텍처](docs/architecture/technical-architecture.md) · [구조도 안내](docs/architecture/README.md) | 구성요소·데이터 흐름·DE/DS/Web 책임 경계 |
+| 3 | [제품 백로그](docs/product/product-backlog.md) | Epic·유저스토리·수용 기준·우선순위 |
+| 4 | [Sprint 1 범위](docs/product/sp1-backlog.md) | 목표·팀 간 의존성·작업 구분 |
+| 5 | [DS 백로그](docs/product/sp1-ds-backlog.md) · [DE](docs/product/sp1-de-backlog.md) · [Web](docs/product/sp1-web-backlog.md) | 각 파트의 세부 작업과 DS가 맡은 위치 |
+| 6 | [개인 DS 기여](docs/contributions/ds-issues-and-deliverables.md) | 담당 이슈·실제 개인 작업물·연결 PR |
+
+`docs/product`와 `docs/architecture`는 **팀 공통 참고 자료**입니다. 원본 출처를 문서마다 표시했으며 본인의 단독 작성물로 주장하지 않습니다. 원본의 계획·KPI·완료 기준은 당시 목표이고 실제 달성 여부는 별도입니다. 2026-09-21에 본문과 문서 간 링크를 확인해 이관했습니다.
 
 ## 담당 범위
 
@@ -71,7 +92,7 @@
 - 분석 문서·노트북: 본인 커밋 `7158cbf1bc93bb016a3a505f7f005f9306141481`, [PR #129](https://github.com/dt4-proj3-team3/watchback/pull/129)
 - 입력·출력 계약: 본인 커밋 `28b7e9cc190de1bceb4f0b247057ebe9512c1684`, [PR #131](https://github.com/dt4-proj3-team3/watchback/pull/131)
 
-공동 담당 후보 생성 노트북 1개는 원본 작성자를 명시해 포함했습니다. 그 외 팀원 애플리케이션·수집 파이프라인·인프라·운영 문서·원천 데이터·Git 이력은 제외했습니다. README는 포트폴리오용으로 새로 정리했으며 기존 작성물과 구분합니다.
+공동 담당 후보 생성 노트북 1개는 원본 작성자를 명시해 포함했습니다. 프로젝트 맥락을 위한 팀 공통 제품 문서 6개, 기술 아키텍처 문서와 구조도도 출처를 표시해 포함했습니다. 그 외 팀원 애플리케이션·수집 파이프라인·인프라·운영 문서·원천 데이터·Git 이력은 제외했습니다. README는 포트폴리오용으로 새로 정리했으며 기존 작성물과 구분합니다.
 
 ## 남은 한계
 
