@@ -1,7 +1,6 @@
 # Watchback — 개인 포트폴리오
 
 누적된 Dependabot 취약점 알림에 EPSS·KEV·GHSA 외부 위험 신호를 결합해 다시 검토할 후보와 근거를 제시하는 팀 프로젝트입니다. **이 저장소는 Microsoft Data School 팀 프로젝트에서 ShinDuck의 데이터 분석·정책·계약, 파이프라인 참고본과 프로젝트 이해를 위한 팀 공통 문서를 정리한 개인 포트폴리오**입니다.
-발표 자료: [[3차] Watchback 발표자료.pdf](https://github.com/user-attachments/files/32456220/3.Watchback.pdf)
 
 ## 프로젝트 개요 및 아키텍처
 
